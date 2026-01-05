@@ -1,0 +1,366 @@
+/* --- Dasar & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a; /* Warna gelap elegan */
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* --- Navigasi --- */
+header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* --- Global Section Style --- */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #38bdf8;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+/* --- Glassmorphism Card --- */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+.glass:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+/* --- Grids --- */
+.profile-grid, .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.list-modern {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.list-modern li::before {
+    content: '▹ ';
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* --- Project Section --- */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    text-align: center;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.p-desc {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* --- Media Section --- */
+.media-grid-custom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.video-wrapper video {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.photo-display {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #38bdf8;
+    margin-top: 15px;
+}
+
+.photo-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+}
+
+/* --- FAQ --- */
+.faq-container {
+    max-width: 700px;
+    margin: auto;
+}
+/* FAQ Interaktif */
+.faq-item {
+    cursor: pointer;
+    width: 100%;
+}
+
+.faq-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #38bdf8;
+    transition: transform 0.3s ease;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* State saat diklik (aktif) */
+.faq-item.active .faq-content {
+    max-height: 200px; /* Memberikan ruang untuk jawaban */
+    opacity: 1;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Berubah jadi tanda silang */
+    color: #ff4d4d;
+}
+
+/* --- Form & Maps --- */
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-family: inherit;
+}
+
+.btn-send {
+    width: 100%;
+    padding: 12px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    border: none;
+    margin-top: 0px;
+}
+
+.main-wrapper {
+  display: flex;       /* Membuat konten sejajar ke samping */
+  gap: 40px;           /* Memberikan jarak antara map dan tanya jawab */
+  align-items: flex-start;
+  padding: 20px 0; 
+}
+
+.map-area, .faq-area {
+  flex: 1;             /* Memberikan lebar yang sama besar (50-50) */
+  min-width: 0;
+}
+
+.faq-area h3, .map-area h3 {
+  margin-bottom: 20px;
+  color: #4a90e2;      /* Warna aksen biru agar menarik */
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333; /* Garis pembatas tipis */
+}
+
+.answer {
+  color: #ccc;         /* Warna jawaban sedikit abu-abu agar nyaman dibaca */
+  font-size: 0.95rem;
+}
+
+/* Responsif: Jika dibuka di HP, map akan di atas dan FAQ di bawahnya */
+@media (max-width: 768px) {
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .map-box iframe {
+    height: 300px;
+  }
+}
+
+/* --- Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
